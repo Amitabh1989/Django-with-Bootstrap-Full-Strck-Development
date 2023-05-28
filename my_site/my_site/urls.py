@@ -22,6 +22,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # path('wing/', include('wing_man.urls')),
     path('shadow/', include('shadow.urls')),
+    path('cars/', include('cars.urls')),
+    path('carrental/', include('carrental.urls')),
 ]
 
 handler404 = 'my_site.views.custom_not_found_view'

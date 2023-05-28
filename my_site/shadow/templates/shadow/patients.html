@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <ul>
+    {% for i in patients %}
+    
+    <li>{{i}}</li>
+    {% endfor %}
+
+    </ul>
+{% endblock content %}
+
+

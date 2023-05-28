@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http.response import Http404, HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from . import models
 
 # Create your views here.
 route_table = {
@@ -38,3 +39,10 @@ def render_variable_view(request):
         "dict_of_task": {"1": "Learn", "2": "Practice", "3": "Implement", "logged_in": True}
     }
     return render(request, "shadow/variable.html", context=data)
+
+def list_patients(request):
+    all_patients = models.Patient.objects.all()
+    context = {
+        "patients": all_patients
+    }
+    return render(request, 'shadow/patients.html', context=context)

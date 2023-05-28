@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+        <h3>List your cars here</h3>
+    <br>
+    <ul>
+        {% if cars|length == 0 %}
+            <h4>No cars found</h4>
+        {% else %}
+            {% for car in cars %}
+                <li>{{car}}</li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>
+
+{% endblock content %}
+
+

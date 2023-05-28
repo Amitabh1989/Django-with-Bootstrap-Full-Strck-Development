@@ -35,6 +35,8 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     "shadow.apps.ShadowConfig",
+    "cars.apps.CarsConfig",
+    "carrental.apps.CarrentalConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
