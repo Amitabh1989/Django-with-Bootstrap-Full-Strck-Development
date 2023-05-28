@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'carrental/custom.css' %}">
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="container myform">
+    <form action="" method="POST">
+        {% for field in form %}
+        
+        <div class="mb-3">
+            {{field.label_tag}}
+        </div>
+        {{field}}
+        {% endfor %}
+        <br>
+        <input class='btn btn-primary' type="submit" value="Submit">
+    </form>
+</div>
+
+</form>
+
+{% endblock content %}
+
+
