@@ -16,6 +16,7 @@ def modules_view(request, module):
         return HttpResponse(page)
     except:
         raise Http404("ACTUAL 404 Message : Page not found as requested")
+        # return HttpResponseRedirect(request, "404.html")
 
 def num_page_view(request, num_page):
     module_list = list(route_table.keys())
@@ -26,4 +27,14 @@ def num_page_view(request, num_page):
     return HttpResponseRedirect(webpage)
 
 def render_view(request):
-    return render(request, "wingman/example.html")
+    return render(request, "shadow/example.html")
+
+def render_variable_view(request):
+    data = {
+        "first_name": "Amitabh",
+        "last_name": "Suman",
+        "age": 31,
+        "list_of_items": [1, 2, 3],
+        "dict_of_task": {"1": "Learn", "2": "Practice", "3": "Implement", "logged_in": True}
+    }
+    return render(request, "shadow/variable.html", context=data)

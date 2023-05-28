@@ -26,14 +26,15 @@ SECRET_KEY = "django-insecure-8q^s@_f-b%()%fn!a@h085wyuu_%_v$mf&e#9z2-f5^8m7ru73
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "127.0.0.1"
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    "wing_man",
-    "wingman",
+    "shadow.apps.ShadowConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -58,7 +59,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(BASE_DIR, "templates/")
+            os.path.join(BASE_DIR, 'templates/')
         ],
         "APP_DIRS": True,
         "OPTIONS": {

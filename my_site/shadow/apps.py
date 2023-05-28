@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class WingmanConfig(AppConfig):
+class ShadowConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "wingman"
+    name = "shadow"
