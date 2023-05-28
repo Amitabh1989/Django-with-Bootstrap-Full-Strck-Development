@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>{{first_name | upper}} {{last_name}} is here!</h1>
+    <h2>Age is {{age}} Length of list is {{list_of_items | length}} is here!</h2>
+    <h2>Dict is {{dict_of_task.1 | capfirst}} here!</h2>
+    <ul>
+
+        {% for item in list_of_items %}
+            <p><li>{{item}}</li></p>
+
+        {% endfor %}
+    </ul>
+
+    {% if dict_of_task.logged_in  %}
+        <h3>Welcome back, {{first_name}}, you are logged in</h3>
+    {% endif %}
+
+    <h3><a href="{% url "shadow:example" %}"> Click to go to Example</a></h3>
+
+{% endblock content %}

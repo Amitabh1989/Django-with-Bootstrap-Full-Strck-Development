@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-# from wingman import views
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('wing/', include('wing_man.urls')),
-    path('wingman/', include('wingman.urls')),
+    # path('wing/', include('wing_man.urls')),
+    path('shadow/', include('shadow.urls')),
 ]
+
+handler404 = 'my_site.views.custom_not_found_view'
