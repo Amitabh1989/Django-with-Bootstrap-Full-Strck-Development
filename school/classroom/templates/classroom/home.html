@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h2>Welcome to Home</h2>
+
+<div class="container">
+<ul>
+    <a href="{% url 'classroom:thanks' %}">Thank you page</a>
+</ul>
+<ul>
+    <a href="{% url 'classroom:contact' %}">Contact us</a>
+</ul>
+</div>
+
+{% endblock content %}
+
+
