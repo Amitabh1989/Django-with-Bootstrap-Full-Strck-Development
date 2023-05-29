@@ -14,10 +14,17 @@ def feedback_view(request):
         form = ReviewForm(request.POST)
         if form.is_valid():
             print(form.cleaned_data)
-            cdata = form.cleaned_data
-            review = cdata["review"]
-            stars = int(cdata["stars"])
-            models.Feedback.objects.create(review=review, stars=stars).save()
+            # cdata = form.cleaned_data
+            # first_name = cdata["first_name"]
+            # last_name = cdata["last_name"]
+            # email = cdata["email"]
+            # review = cdata["review"]
+            # stars = int(cdata["stars"])
+            # models.Feedback.objects.create(review=review, stars=stars,
+            #                                first_name=first_name,
+            #                                last_name=last_name,
+            #                                email=email).save()
+            form.save()
             return redirect(reverse('carrental:thanks'))
     else:
         form = ReviewForm()
