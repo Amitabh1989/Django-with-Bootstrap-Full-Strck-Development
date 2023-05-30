@@ -1,0 +1,19 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<h3>Create New Book</h3>
+<div class="container">
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    {{form.errors}}
+    <input type="submit">
+
+</form>
+</div>
+
+{% endblock content %}
+
+
+
