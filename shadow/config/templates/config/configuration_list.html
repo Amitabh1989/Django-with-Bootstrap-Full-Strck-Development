@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h3>Steps submitted so far</h3>
+    <hr>
+    <ul>
+    {% for step in step_list %}
+        <li><a href="/config/step_details/{{step.pk}}">{{step}}</a></li>
+    {% endfor %}
+    </ul>
+    <hr>
+    <form action="{% url 'config:steps_download' %}" method="GET">
+        {% csrf_token %}
+        <input type="submit" value="Download JSON">
+    </form>
+</div>
+
+{% endblock content %}
+

@@ -1,0 +1,19 @@
+{% extends 'home.html' %}
+
+
+{% block content %}
+
+<div class="container">
+
+    <!--
+    # By default ListView sends model_list so here : bookinstance_list
+    -->
+    <h3>Checked out books list</h3>
+    {% for book in bookinstance_list %}
+        <li>{{book}}</li>
+    {% endfor %}
+
+</div>
+{% endblock content %}
+
+

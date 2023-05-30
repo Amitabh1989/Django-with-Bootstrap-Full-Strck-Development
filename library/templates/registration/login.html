@@ -10,6 +10,8 @@
 <!--
     next is returned by dj authentication system
 -->
+
+<div class="container">
 {% if next %}  
     {% if user.is_authenticated %}
         <p>User is not authenticated to view this</p>
@@ -19,6 +21,8 @@
     {% endif %}
 
 {% endif %}
+
+</div>
 
 <div class="container">
 <form action="{% url 'login' %}" method="POST">
