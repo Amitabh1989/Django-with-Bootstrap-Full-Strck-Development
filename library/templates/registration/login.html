@@ -1,0 +1,39 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+{% if form.errors %}
+    <h3>Username / Password was wrong</h3>
+
+{% endif %}
+
+<!--
+    next is returned by dj authentication system
+-->
+{% if next %}  
+    {% if user.is_authenticated %}
+        <p>User is not authenticated to view this</p>
+    
+    {% else %}
+        <p>User is not logged in</p>    
+    {% endif %}
+
+{% endif %}
+
+<div class="container">
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    {{form.username.label_tag}}
+    {{form.username}}
+
+    {{form.password.label_tag}}
+    {{form.password}}
+
+    <input type="submit" value="Login">
+    <input type="hidden" name="next" value="{{next}}">
+
+
+</form>
+</div>
+
+{% endblock %}

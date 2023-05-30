@@ -1,5 +1,5 @@
 """
-URL configuration for catalog project.
+URL configuration for library project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,8 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import render
+from django.views.generic import RedirectView
+# In case we want to redirect the user to catalog page by default, include
+# the below line
+# path('', RedirectView.as_view(url='catalog/'))
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("library/", include('library.urls')),
+    # path("", lambda request: render(request, "home.html"), name="home"),
+    path('', RedirectView.as_view(url='catalog/')),
+    path("catalog/", include('catalog.urls')),
+    path('accounts/', include('django.contrib.auth.urls'))  #account/login, account/logout etc
 ]

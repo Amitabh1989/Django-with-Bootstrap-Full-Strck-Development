@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% for teacher in teacher_list %}
+
+        <a href='/classroom/teacher_detail/{{teacher.id}}'><li>{{teacher.first_name}} {{teacher.last_name}} teaches {{teacher.subject}}.....</a>
+            <li><a href="/classroom/teacher_update/{{teacher.id}}">Update</a></li>
+            <li><a href="/classroom/teacher_delete/{{teacher.id}}">Delete</a></li>
+
+        </li>
+        {% endfor %}
+    </form>
+</div>
+
+{% endblock content %}
